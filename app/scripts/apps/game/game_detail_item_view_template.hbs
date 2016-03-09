@@ -1,0 +1,37 @@
+<section class="item" data-id="{{id}}">
+  <h1 class="id">{{t "crud.titleEdit"}} {{id}}</h1>
+  <form name="model" class="form-horizontal">
+    <div class="form-group">
+      <label for="text" class="control-label">{{t "crud.text.label"}}</label>
+      <textarea id="text" name="text" type="text" class="text form-control"
+        placeholder="{{t "crud.text.placeholder"}}">{{text}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for"author" class="control-label">{{t "crud.author.label"}}</label>
+      <input id="author" name="author" type="text" value="{{author}}"
+        class="form-control" placeholder="{{t "crud.author.placeholder"}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="created" class="control-label">{{t "crud.created.label"}}</label>
+      <input id="created" name="created" type="text"
+        value="{{formatDate created}}, on {{formatDay created}}" class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input id="is-published" name="isPublished"
+        {{#if isPublished}}
+        checked
+        {{/if}}
+        type="checkbox" />  {{t "crud.published.label"}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <button class="save btn btn-primary">{{t "crud.save"}}</button>
+      <button class="remove btn btn-danger">{{t "crud.remove"}}</button>
+    </div>
+  </form>
+</section>

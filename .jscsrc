@@ -1,0 +1,10 @@
+{
+    "preset": "google",
+    "esnext": true, 
+    "validateIndentation": null,
+    "maximumLineLength": null,
+    "disallowSpacesInAnonymousFunctionExpression": null,
+    "disallowSpacesInsideObjectBrackets": null,
+    "disallowMultipleVarDecl": null,
+    "excludeFiles": ["node_modules/*", "app/bower_components/*"]
+}

@@ -1,0 +1,14 @@
+{
+  "generator-mario": {
+    "preferences": {
+      "projectName": "joystick-time",
+      "ecma": 6,
+      "testFramework": "mocha",
+      "tests": "custom",
+      "testFolder": "test/",
+      "styles": "less",
+      "buildTool": "grunt"
+    },
+    "version": "1.0.0"
+  }
+}
