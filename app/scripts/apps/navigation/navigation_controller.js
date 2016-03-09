@@ -1,23 +1,35 @@
-import {Object as Obj} from 'marionette';
-import NavigationItemView from './navigation_composite_view';
+import Backbone from 'backbone';
+import Marionette from 'marionette';
+import Radio from 'radio';
+import NavigationCollectionView from './navigation_collection_view';
 import NavigationCollection from './navigation_collection';
-import i18n from 'i18n';
+import NavigationModel from './navigation_model';
 
-export default Obj.extend({
+export default Marionette.Object.extend({
+
   initialize(options) {
        this.region = options.region;
-       this.show();
-   },
-   show() {
-       let collection = new NavigationCollection();
-       collection.fetch();
-       let view = new NavigationItemView({collection: collection});
-       view.listenTo(view, 'childview:language:click', (data) => {
-         i18n.setLng(data.model.get('key'), () => {
-           Backbone.history.loadUrl(Backbone.history.fragment);
-           view.render();
-         });
+
+       this.channel = Radio.channel('navigation');
+
+       var collection = new NavigationCollection();
+
+       var view = new NavigationCollectionView({collection: collection});
+
+       this.listenTo(view, 'childview:navigation-item:clicked', (view, model) => {
+         Backbone.history.navigate(model.get('baseRoute'), {trigger: true});
        });
+
+       this.listenTo(this.channel, 'crud-update', (modelData) => {
+         var model = collection.findWhere({name: modelData.name});
+
+         if (model) {
+           model.set('count', modelData.count);
+         } else {
+           collection.add(new NavigationModel(modelData));
+         }
+       });
+
        this.region.show(view);
    }
 });

@@ -15,7 +15,8 @@
     "backbone.radio": "~1.0.0",
     "i18next": "~1.10.2",
     "fastclick-amd": "*",
-    "lil-uuid": "~0.1.1"
+    "lil-uuid": "~0.1.1",
+    "material-design-icons": "^2.2.0"
   },
   "devDependencies": {
     "picturefill": "~2.3.1",

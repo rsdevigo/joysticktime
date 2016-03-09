@@ -1,10 +1,10 @@
 import Marionette from 'marionette';
-import SidebarItemView from './sidebar_item_view';
+import NavigationItemView from './navigation_item_view';
 
 export default Marionette.CollectionView.extend({
-  childView: SidebarItemView,
-  tagName: 'ul',
-  className: 'nav nav-pills nav-stacked',
+  childView: NavigationItemView,
+  tagName: 'nav',
+  className: 'mdl-navigation',
 
   initialize() {
     this.listenTo(this.collection, 'change', this.render);

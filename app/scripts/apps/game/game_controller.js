@@ -16,14 +16,14 @@ msg.NAVIGATE_NEW = 'game:navigateNew';
 msg.CRUD_UPDATE = 'crud-update';
 
 let feature = {
-  name: 'game',
+  name: 'Install games',
   baseRoute: '#game'
 };
 
 export default Marionette.Object.extend({
   initialize(options) {
     let that = this;
-    this.channel = Radio.channel('sidebar');
+    this.channel = Radio.channel('navigation');
 
     this.collection = new GameCollection();
     this.collection.fetch({

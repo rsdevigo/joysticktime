@@ -1,7 +1,15 @@
-<div class="item">
-  <div class="text col-xs-8 col-sm-10 col-md-10">{{text}}</div>
-
-  <div class="col-xs-4 col-sm-2 col-md-2 pull-right">
-    <button class="edit btn btn-default pull-right">{{t "crud.edit"}}</button>
-  </div>
+<div class="mdl-card__media">
+    <img src="images/more-from-3.png">
+</div>
+<div class="mdl-card__title" style="height:auto">
+    <h4 class="mdl-card__title-text">{{text}}</h4>
+</div>
+<div class="mdl-card__supporting-text" style="height:auto; padding-bottom:56px">
+    <span class="mdl-typography--font-light mdl-typography--subhead"></span>
+</div>
+<div class="mdl-card__actions" style="position:absolute; bottom:0;">
+    <button class="edit mdl-button mdl-js-button mdl-typography--text-uppercase">
+        {{t "crud.edit"}}
+        <i class="material-icons">chevron_right</i>
+    </button>
 </div>

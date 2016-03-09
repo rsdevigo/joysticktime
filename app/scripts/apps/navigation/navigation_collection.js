@@ -1,7 +1,6 @@
-import {Collection} from 'backbone';
+import Backbone from 'backbone';
+import NavigationModel from './navigation_model';
 
-export default Collection.extend({
-  url: 'jsondata/navigation-collection.json',
-  defaults: {
-  }
+export default Backbone.Collection.extend({
+  model: NavigationModel
 });

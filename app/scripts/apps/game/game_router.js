@@ -7,7 +7,6 @@ export default Marionette.AppRouter.extend({
   },
   appRoutes: {
     'game': 'list',
-    'game/new': 'create',
     'game/:id':'detail'
   }
 });
